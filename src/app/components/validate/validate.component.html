@@ -1,0 +1,18 @@
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['required']" class="text-danger">
+    {{key}} required.
+</span>
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['min']" class="text-danger">
+    {{key}} min {{field.errors?.['min'].min}}.
+</span>
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['max']" class="text-danger">
+    {{key}} max {{field.errors?.['max'].max}}.
+</span>
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['minlength']" class="text-danger">
+    {{key}} min {{field.errors?.['minlength'].requiredLength}}.
+</span>
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['maxlength']" class="text-danger">
+    {{key}} max {{field.errors?.['maxlength'].requiredLength}}.
+</span>
+<span *ngIf="(field.dirty || field.touched) && field.errors?.['hasProductError']" class="text-danger">
+    {{key}} need 'product'.
+</span>

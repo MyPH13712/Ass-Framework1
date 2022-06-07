@@ -1,0 +1,15 @@
+<div>
+    <a routerLink="/admin/products"><button class="btn btn-outline-primary">Quay lai</button></a>
+</div>
+<form [formGroup]="proForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="">Product name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <span
+            *ngIf="(proForm.get('name')?.dirty || proForm.get('name')?.touched && proForm.get('name')?.errors?.['required'])"></span>
+        <app-validate [field]="proForm.get('name')" key="Name Product"></app-validate>
+    </div>
+    <div>
+        <button class="btn btn-success" [disabled]="!proForm.valid">Submit</button>
+    </div>
+</form>
